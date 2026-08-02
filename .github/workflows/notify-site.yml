@@ -1,0 +1,21 @@
+name: Notify site
+
+# Every push to main tells sp-night.github.io to rebuild, so the site never
+# lags behind a shipped port. Requires the SITE_DISPATCH_TOKEN org secret —
+# a fine-grained PAT with contents read/write on sp-night/sp-night.github.io.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send port-updated to sp-night.github.io
+        run: >
+          gh api repos/sp-night/sp-night.github.io/dispatches
+          -f event_type=port-updated
+          -f 'client_payload[port]=eza'
+        env:
+          GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
