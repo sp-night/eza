@@ -79,7 +79,7 @@ ln -sf "$PWD/eza/themes/sp_night_noite.yml" ~/.config/eza/theme.yml
 
 ## What gets themed
 
-| theme.yml key | Role | Meaning |
+| `theme.yml` key | Role | Meaning |
 |---|---|---|
 | `filekinds.directory` | `syntax.keyword` | directories in bold *marginal* — the expressway sign pointing the way |
 | `filekinds.executable` | `diagnostic.ok` | executables in bold *ibira*, green light |
@@ -98,13 +98,13 @@ both published as data:
 [`palette.json`](https://sp-night.github.io/palette.json) and
 [`roles.json`](https://sp-night.github.io/roles.json). The contrast floors those
 colours have to clear are [written down in the spec](https://sp-night.github.io/spec)
-and enforced by the site's test suite.
+and enforced in CI.
 
 ## The mapping
 
-[`eza.yml.tmpl`](eza.yml.tmpl) is the full record of which `theme.yml` key means
-which role — the table above in complete form, across all ~80 keys eza exposes.
-The files in [`themes/`](themes) are what it resolves to, one per flavour.
+[`eza.yml.tmpl`](eza.yml.tmpl) is the full record of which `theme.yml` key means which
+role — the table above in complete form, across all ~80 keys eza exposes. The files in
+[`themes/`](themes) are what it resolves to, one per flavour.
 
 You never need it to use the theme: the shipped files are plain text and final.
 It is here so the mapping survives, and so a retuned palette can be rolled
