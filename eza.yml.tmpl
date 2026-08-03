@@ -1,10 +1,16 @@
+---
+spn:
+  version: "^1.0"
+  matrix: [flavor]
+  filename: "themes/sp_night_{{ .Flavor }}.yml"
+---
 # SP Night — {{ .FlavorLabel }}
 # {{ .FlavorDesc }}
 #
 # Generated from the SP Night palette — do not edit by hand.
-# https://github.com/sp-night/eza
+# {{ .Repo }}
 #
-# install: ~/.config/eza/theme.yml   (or $EZA_CONFIG_DIR/theme.yml)
+# install: {{ .Install }}   (or $EZA_CONFIG_DIR/theme.yml)
 # eza picks it up on the next run — nothing to source. If you used the old
 # EZA_COLORS script, remove the source line: the env var overrides this file.
 
